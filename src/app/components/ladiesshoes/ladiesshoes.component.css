@@ -1,0 +1,125 @@
+.main-card {
+    width: 99%; /* Full width minus left & right margins */
+    margin: 10px;
+    height: 330px; /* Set height of the card */
+    background-color:white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(123, 24, 24, 0.3);
+    border-radius: 8px;
+    position: relative;
+   margin-top: 6%; /* Adjust position */
+    
+}
+
+.main-card img {
+    width: 99.9%;
+    height: 100%;
+    padding-left: 1%;
+
+ 
+}
+.btn {
+    width: 160px;
+    padding: 15px;
+    border: none;
+    border-radius: 25px;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    opacity: 0.9;
+  }
+  
+  .btn-blue {
+    background: linear-gradient(to right, white, white);
+  }
+  
+  .btn-green {
+    background: linear-gradient(to right, white, white);
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 1;
+  }
+  .card-container2 {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+   
+}
+.card {
+    width: 250px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.sale-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.card-footer {
+ 
+  position: absolute;
+  bottom: 4px; /* Fix the button 10px from the bottom */
+   width: 88%; 
+  text-align: center;
+  padding: 0;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(45deg, #ff6600, #ff3300); /* Attractive gradient */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(45deg, #e65c00, #cc2900);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+  
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.95);
+}

@@ -1,0 +1,190 @@
+<div class="card-container">
+    <!-- Image Section with Buttons Overlay -->
+    <div class="image-container">
+      <img src="https://www.krishnawatch.com/cdn/shop/files/mobile.jpg?v=1737979636&width=1500" alt="Product Image" class="image" />
+      
+      <!-- Buttons on Image -->
+      <div class="overlay-buttons">
+        <button class="btn btn-blue">Mens Watch</button>
+        <button class="btn btn-green">Ladies Watch</button>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="card-container2">
+    
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+              <div class="sale-btn">SALE</div>
+              <img [src]="product.img" alt="{{ product.name }}">
+            </div>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">${{ product.price }}</p>
+              <div class="card-footer">
+                <button class="add-to-cart-btn" (click)="addToCart(product)">
+                  🛒 Add to Cart
+                </button>
+              </div>
+            </div>
+          </div>
+    
+
+       
+        <!-- <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img  src="https://artoftimeindia.com/cdn/shop/products/WGPN0009_1_600x.jpg?v=1601403354" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">old cartier panthere watch</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+  
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img src="https://images-na.ssl-images-amazon.com/images/I/51uQckj8C%2BL.jpg" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">patek philippe</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img  src="https://ad.kapoorwatch.com/content/images/product/L3.430.4.92.9-400.webp" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">tisot watch</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img  src="https://www.titan.co.in/dw/image/v2/BKDD_PRD/on/demandware.static/-/Sites-titan-master-catalog/default/dw1ff77f49/images/Titan/Catalog/95146KD02_1.jpg?sw=800&sh=800" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">Titan Watch</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+
+    <div class="card-container2">
+    
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCVs9KyA8zRpGYxXVkR_QKziuBO9g0Z-Q8Zg&s" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">Rolex Watch</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img  src="https://sc04.alicdn.com/kf/H42fe7464172949c49027d25174da4b2dg.png" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">Smart Watch </h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+  
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img src="https://www.vanrijkestatejewellers.com/cdn/shop/products/9636_1200x1200.jpg?v=1668784516" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">jaeger-Lecoultre WWTC watch</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img  src="https://images.squarespace-cdn.com/content/v1/56fc16bba3360c2000b979d0/1705612059332-UTP44ZXGGL62MBKT6QTN/1.jpeg?format=1000w" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">Smart Watch</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        
+        <div class="card mx-auto pt-4" *ngFor="let product of products">
+            <div class="image-container">
+                <div class="sale-btn">SALE</div>
+                <img  src="https://timeavenue.com/wp-content/uploads/2024/03/10A326-5106-2-1-600x600.webp" />
+            </div>
+            <div class="card-body text-center">
+                <h5 class="card-title">Wrist Watch</h5>
+                <p class="card-text">$1,399</p>
+                <div class="card-footer">
+                    <button class="add-to-cart-btn">
+                        🛒 Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</div>

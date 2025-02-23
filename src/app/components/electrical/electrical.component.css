@@ -1,0 +1,124 @@
+.main-card {
+    width: 95%; /* Full width minus left & right margins */
+    margin: 10px;
+    height: 300px; /* Set height of the card */
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative;
+   margin-top: 6%; /* Adjust position */
+    left: 2%;
+}
+
+.main-card img {
+    width: 98%;
+    height: 100%; /* Set height to 40% of the parent container */
+    /* Adjust position */
+    padding-left: 1%;
+ 
+}
+
+.text {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+}
+h1 {
+    text-align: center;
+    font-size: 35px; /* Bigger text */
+    font-weight: bold;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #090909, #0a0a0a, #0e0e0e); /* Gradient color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.2);
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    0% { text-shadow: 3px 3px 10px rgba(19, 18, 18, 0.5); }
+    100% { text-shadow: 5px 5px 20px rgba(225, 116, 106, 0.8); }
+}
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+   
+}
+.card {
+    width: 250px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.sale-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.card-footer {
+ 
+    position: absolute;
+    bottom: 4px; /* Fix the button 10px from the bottom */
+     width: 88%; 
+    text-align: center;
+    padding: 0;
+  }
+  
+  .add-to-cart-btn {
+    background: linear-gradient(45deg, #ff6600, #ff3300); /* Attractive gradient */
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .add-to-cart-btn:hover {
+    background: linear-gradient(45deg, #e65c00, #cc2900);
+    transform: scale(1.05);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    
+  }
+  
+  .add-to-cart-btn:active {
+    transform: scale(0.95);
+  }

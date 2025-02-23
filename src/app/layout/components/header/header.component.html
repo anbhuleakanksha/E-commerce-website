@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> HEADER | E-COMMERCE WEBSITE </title>
+    <!-- favicon -->
+    <link rel="icon" href="https://yt3.ggpht.com/a/AGF-l78km1YyNXmF0r3-0CycCA0HLA_i6zYn_8NZEg=s900-c-k-c0xffffffff-no-rj-mo" type="image/gif" sizes="16x16">
+    <!-- EXTERNAL LINKS -->
+    <script src="https://kit.fontawesome.com/4a3b1f73a2.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    
+
+    <link rel="stylesheet" href=
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+    
+        <!-- Bootstrap Font Icon CSS -->
+        <link rel="stylesheet" href=
+    "https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+</head>
+<body>
+<header class="header-container">
+  <!-- Shop Name -->
+  <div class="shop-logo">
+    <img src="https://img.freepik.com/premium-vector/shopping-logo-vector-icon-illustration-design_757387-4353.jpg?w=740" alt="Shop Logo">
+    <b>SHOP</b>LANE
+  </div>
+
+  <!-- Navigation Links -->
+  <nav class="nav-links">
+    <div class="dropdown">
+      <a [routerLink]="['home']" routerLinkActive="router-link-active">CATEGORIES</a>
+      <div class="dropdown-content">
+        <a [routerLink]="['menscloth']" routerLinkActive="router-link-active">Men's Clothing</a>
+        <a [routerLink]="['ladycloth']" routerLinkActive="router-link-active">Women's Clothing</a>
+        <a [routerLink]="['ladieswatch']" routerLinkActive="router-link-active">Women's Watches</a>
+        <a [routerLink]="['menswatch']" routerLinkActive="router-link-active">Men's Watches</a>
+        <a [routerLink]="['ladiesshoes']" routerLinkActive="router-link-active">FOOTWEAR</a>
+        <a [routerLink]="['electrical']" routerLinkActive="router-link-active">Electronics</a>
+      </div>
+    </div>
+    <a [routerLink]="['register']" routerLinkActive="router-link-active">REGISTRATION</a>
+    <a [routerLink]="['ladiesshoes']" routerLinkActive="router-link-active">FOOTWEAR</a>
+  </nav>
+
+  <!-- SEARCH SECTION -->
+  <div class="search-container">
+    <i class="bi bi-search search-icon"></i>
+    <input type="text" class="search-input" placeholder="Search anything...">
+    <button class="btn btn-search">Search</button>
+  </div>
+
+  <!-- User Section -->
+  <div class="user-section">
+    <!-- If userName exists, show name; else show Person Icon -->
+    <h6 *ngIf="userName; else showIcon" class="small-font">
+      {{ userName }}
+    </h6>
+    <ng-template #showIcon>
+      <h6><i class="bi bi-person"></i></h6>
+    </ng-template>
+
+    <!-- Cart Icon (Click to Show Cart Popup) -->
+    <h1><i class="bi bi-cart" (click)="toggleCart()"></i>
+    <span class="cart-count">{{ cartItems.length }}</span></h1>
+
+    <!-- Logout Icon -->
+    <h1><i (click)="logout()" class="bi bi-box-arrow-right" style="cursor: pointer;"></i></h1>
+  </div>
+
+  <!-- Cart Popup -->
+  <div class="cart-popup" *ngIf="showCart">
+    <button class="close-btn" (click)="toggleCart()">×</button>
+    <h3>Cart Items</h3>
+
+    <div class="cart-item" *ngFor="let item of cartItems">
+      <img [src]="item.img" class="cart-img">
+      <div class="cart-details">
+        <p class="cart-name">{{ item.name }}</p>
+        <p class="cart-price">₹{{ item.price }}</p>
+      </div>
+    </div>
+
+    <hr>
+    <p class="cart-total"><strong>Total Price: ₹{{ getTotalPrice() }}</strong></p>
+
+    <!-- Order Now Button -->
+    <button class="order-btn" (click)="placeOrder()">Order Now</button>
+  </div>
+</header>
+</body>
+</html>

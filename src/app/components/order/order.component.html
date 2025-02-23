@@ -1,0 +1,31 @@
+<div class="order-container">
+  <h2>Order Summary</h2>
+
+  <div *ngFor="let item of cartItems" class="order-item">
+    <img [src]="item.img" class="order-img">
+    <div class="order-details">
+      <p class="order-name">{{ item.name }}</p>
+      <p class="order-price">₹{{ item.price }}</p>
+    </div>
+    <button class="remove-btn" (click)="removeFromCart(item)">Remove</button>
+  </div>
+
+  <p class="order-total">Total Price: ₹{{ getTotalPrice() }}</p>
+
+  <h3>Billing Details</h3>
+  <form class="order-form" (ngSubmit)="confirmOrder()">
+    <label for="name">Name</label>
+    <input type="text" id="name" [(ngModel)]="order.name" name="name" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" [(ngModel)]="order.email" name="email" required>
+
+    <label for="address">Address</label>
+    <textarea id="address" [(ngModel)]="order.address" name="address" required></textarea>
+
+    <label for="total">Total Price (₹)</label>
+    <input type="text" id="total" [value]="'₹' + getTotalPrice()" name="total" readonly>
+
+    <button type="submit" class="confirm-btn">Confirm Order</button>
+  </form>
+</div>

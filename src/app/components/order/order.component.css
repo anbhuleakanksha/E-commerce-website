@@ -1,0 +1,154 @@
+/* Order Page Container */
+/* Order Page Container */
+.order-container {
+  max-width: 500px;
+  margin: 80px auto 40px; /* Adjusted margin-top to 60px */
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+  
+  /* Order Title */
+  .order-container h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Order Item List */
+  .order-item {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Order Item Image */
+  .order-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 10px;
+  }
+  
+  /* Order Item Details */
+  .order-details {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .order-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .order-price {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Total Price */
+  .order-total {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    text-align: right;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 2px solid #ddd;
+  }
+  
+  /* Form Styling */
+  .order-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .order-form label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+    color: #444;
+  }
+  
+  .order-form input,
+  .order-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+    width: 100%;
+    background: #f9f9f9;
+    margin-bottom: 15px;
+    transition: 0.3s;
+  }
+  
+  .order-form input:focus,
+  .order-form textarea:focus {
+    border-color: #28a745;
+    background: white;
+    outline: none;
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.3);
+  }
+  
+  /* Order Button */
+  .confirm-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .confirm-btn:hover {
+    background: #218838;
+  }
+  .remove-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-left: 10px;
+    transition: 0.3s;
+  }
+  
+  .remove-btn:hover {
+    background: darkred;
+  }
+  .quantity-controls {
+    display: flex;
+    align-items: center;
+  }
+  
+  .quantity-controls button {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .quantity-controls button:hover {
+    background: #218838;
+  }
+  
+   

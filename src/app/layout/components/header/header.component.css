@@ -1,0 +1,222 @@
+body {
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 15px 40px;
+    box-shadow: 0 1px 2px rgba(60, 64, 67, 0.3), 0 2px 6px rgba(60, 64, 67, 0.15);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.shop-logo {
+    display: flex;
+    align-items: center;
+    font-size: 30px;
+    color: rgb(246, 117, 138);
+    font-weight: bold;
+}
+.shop-logo img {
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+}
+.shop-logo b {
+    color: red;
+}
+.nav-links {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+.nav-links a {
+    text-decoration: none;
+    color: rgb(29, 29, 29);
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 400px;
+    width: 100%;
+}
+.search-input {
+    width: 100%;
+    padding: 10px 40px;
+    border-radius: 50px;
+    border: 1px solid #ccc;
+}
+.search-icon {
+    position: absolute;
+    left: 15px;
+}
+.btn-search {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 50px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+}
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-right: 70px;
+}
+.user-section i {
+    font-size: 40px;
+    cursor: pointer;
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .search-container {
+        width: 80%;
+        margin-top: 10px;
+    }
+}
+
+        /* Dropdown container */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown button */
+        .dropdown a {
+            text-decoration: none;
+            color: black;
+            /* padding: 10px 15px; */
+            display: block;
+            /* background-color: #f8f8f8; */
+        }
+
+        /* Dropdown list (hidden by default) */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+        }
+
+        /* Dropdown items */
+        .dropdown-content a {
+            padding: 10px;
+            display: block;
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Hover effect */
+        .dropdown-content a:hover {
+            background-color: #ddd;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .small-font {
+            font-size: 19px; /* Adjust font size */
+            color: red;
+            font-style: bold;
+          }
+          h1 {
+  position: relative;
+  cursor: pointer;
+}
+
+span {
+  background-color: red;
+  color: white;
+  padding: 3px 6px;
+  border-radius: 50%;
+  position: absolute;
+  top: -5px;
+  right: -10px;
+}
+.cart-popup {
+    position: absolute;
+    right: 10px;
+    top: 50px;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 250px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+  }
+  
+  .close-btn {
+    background: red;
+    color: white;
+    border: none;
+    font-size: 16px;
+    float: right;
+    cursor: pointer;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .cart-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .cart-details {
+    flex-grow: 1;
+  }
+  
+  .cart-name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .cart-price {
+    font-size: 13px;
+    color: #555;
+  }
+  
+  .cart-total {
+    text-align: right;
+    font-size: 16px;
+    color: green;
+  }
+  .order-btn {
+    width: 100%;
+    background: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 5px;
+  }
+  
+  .order-btn:hover {
+    background: darkgreen;
+  }

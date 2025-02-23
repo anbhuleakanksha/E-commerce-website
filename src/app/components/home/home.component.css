@@ -1,0 +1,227 @@
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 90%; /* Adjust based on your needs */
+   
+  }
+  
+  .banner img {
+    width: 50%;
+    height: 60%;
+    display: block;
+  }
+  
+  .text-section {
+     flex: 1;
+    text-align: right; /* Align text to the right */
+    padding: 5px;
+  }
+  
+  .text-section h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+
+  }
+  
+  .text-section p {
+    font-size: 25px;
+    margin-bottom: 15px;
+    color: red;
+   
+  }
+  
+  .shop-btn {
+    background-color: #e03e00;
+    color: white;
+    border: none;
+    padding: 10px 50px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-right: 10%;
+    animation: zoomEffect 1s infinite alternate ease-in-out; /* Zoom animation */
+  }
+  
+  .shop-btn:hover {
+    background-color: #d78a7e;
+  }
+
+  @keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.1);
+    }
+}
+  .heading{
+    font-size: 40px; /* Large size for attention */
+    font-weight: bold; /* Bold for impact */
+    color:rgb(13, 12, 12); /* Red color */
+    font-family: 'Cinzel', serif;
+    text-align: center; /* Centered text */
+    text-shadow: 4px 4px 10px rgba(14, 6, 6, 0.3), 
+    -4px -4px 10px rgba(208, 10, 10, 0.3); /* Glowing red effect */
+    transition: transform 0.3s;
+   
+  
+
+  }
+ .heading :hover {
+    transform: scale(1.05); /* Slightly enlarges on hover */
+   
+    
+}
+  .trending {
+ margin-bottom: 90PX;
+    background-color: #f8f4f3;
+    width: 98%;
+    margin: 15px auto;
+    box-shadow: 0 4px 8px 0 rgba(154, 63, 63, 0.5); /* Red shadow */
+    transition: 0.3s;
+    text-align: center;
+    /* padding: 10px; */
+    border-radius: 10px;
+    overflow: hidden; /* Hide overflowing images */
+    
+}
+
+.trending:hover {
+    box-shadow: 0 8px 16px 0 rgba(255, 0, 0, 0.5); /* More intense red on hover */
+}
+
+.image-wrapper {
+    width: 100%;
+    overflow: hidden; /* Prevents scrollbars */
+    position: relative;
+    
+}
+
+.image-container {
+    display: flex;
+    gap: 100px; /* Space between images */
+    width: 200%; /* Twice the original width for seamless loop */
+    padding-left: 100px;
+  
+}
+
+.image-container img {
+    width: 100px; /* Circle size */
+    height: 100px;
+    border-radius: 50%; /* Makes images circular */
+    object-fit: cover;
+   
+}
+.image-container img:hover{
+   
+        transform: scale(1.1); /* Slightly enlarges on hover */
+
+
+}
+
+body {
+  background-color: #f8f9fa;
+}
+.container {
+  display: flex;
+  /* justify-content: center; */
+  flex-wrap: wrap;
+  gap: 25px;
+  padding: 10px;
+  padding-top:30PX ;
+}
+.card {
+  width: 300px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+}
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.img-wrap {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1f1;
+}
+.img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.info-wrap {
+  padding: 15px;
+}
+.title {
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+.rating i {
+  color: gold;
+}
+.bottom-wrap {
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.btn-primary {
+  border-radius: 5px;
+}
+
+.containerForm {
+
+  margin: auto;
+  padding: 10px;
+}
+.cardform {
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  width: 100%;
+  min-height: 200px;
+}
+.row {
+  margin-bottom: 15px;
+}
+.form-group {
+  display: flex;
+  gap: 15px;
+}
+.form-group input {
+  flex: 1;
+}
+textarea {
+  width: 100%;
+  resize: none;
+  height: 100px;
+}
+.button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button:hover {
+  background-color: #0056b3;
+}
+.send-button {
+  text-align: center;
+}
