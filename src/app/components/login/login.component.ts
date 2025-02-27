@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AdminService } from '../../service/admin.service';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -14,17 +14,19 @@ import { AdminService } from '../../service/admin.service';
 export class LoginComponent {
   
 
-  constructor(private router:Router,private adminser:AdminService){}
+  constructor(private router:Router,private authService: AuthService){}
   username: string = ''; // Example input field
   password: string = ''; // Example input field
 
   
 
+  
+
   login() {
-    if (this.username === 'Akanksha@gmail.com' && this.password === '12345') { // Example logic
-      localStorage.setItem('userName', this.username); // ✅ Store user session
+    if (this.username === 'Akanksha@gmail.com' && this.password === '12345') {
+      this.authService.login(this.username); // ✅ Update username dynamically
       this.router.navigate(['/home']); // ✅ Redirect to home page
-      alert('username  login successfully');
+      alert('Login successful');
     } else {
       alert('Invalid username or password');
     }

@@ -7,7 +7,5 @@ export class AdminService {
 
   constructor() { }
 
-  signIn(user:any){
-    sessionStorage.setItem("admin",user);
-  }
+  
 }

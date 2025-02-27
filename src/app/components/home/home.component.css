@@ -177,6 +177,7 @@ body {
 .price {
   font-size: 1.2rem;
   font-weight: bold;
+  color: red;
 }
 .btn-primary {
   border-radius: 5px;

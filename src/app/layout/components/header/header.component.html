@@ -75,13 +75,28 @@
     <button class="close-btn" (click)="toggleCart()">×</button>
     <h3>Cart Items</h3>
 
-    <div class="cart-item" *ngFor="let item of cartItems">
+    <div class="cart-item" *ngFor="let item of cartItems; let i = index">
       <img [src]="item.img" class="cart-img">
+      
       <div class="cart-details">
         <p class="cart-name">{{ item.name }}</p>
         <p class="cart-price">₹{{ item.price }}</p>
+    
+        <!-- Quantity Controls -->
+        <div class="quantity-control">
+          <button (click)="decreaseQuantity(item)">-</button>
+          <span>{{ item.quantity }}</span>
+          <button (click)="increaseQuantity(item)">+</button>
+        </div>
+    
+        <!-- ✅ Ensure Each Product Has Its Own Remove Button -->
+        <button class="remove-btn" (click)="removeProduct(i)">Remove</button>
       </div>
     </div>
+   
+   
+
+
 
     <hr>
     <p class="cart-total"><strong>Total Price: ₹{{ getTotalPrice() }}</strong></p>
