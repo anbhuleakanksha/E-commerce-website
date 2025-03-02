@@ -4,4 +4,5 @@ export interface Ladieswatch {
     price: number;
     img: string;
     quantity: number;
+    totalPrice: number;
 }

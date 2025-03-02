@@ -6,8 +6,14 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AuthService {
   private cartItems: any[] = [];
-  private cartCount = new BehaviorSubject<number>(0);
-  cartCount$ = this.cartCount.asObservable();
+  private cartSubject = new BehaviorSubject<any[]>([]);
+  cart$ = this.cartSubject.asObservable();
+
+  private cartCountSubject = new BehaviorSubject<number>(0);
+  cartCount$ = this.cartCountSubject.asObservable();
+
+  private userNameSubject = new BehaviorSubject<string | null>(localStorage.getItem('userName'));
+  userName$ = this.userNameSubject.asObservable();
 
   constructor() {
     this.loadCart();
@@ -20,63 +26,67 @@ export class AuthService {
     this.updateCart();
   }
 
-  // ✅ Add product to cart
+  // ✅ Add product to cart (Prevent duplicates)
   addToCart(product: any) {
-    const existingProduct = this.cartItems.find(item => item.id === product.id);
-    
+    const existingProduct = this.cartItems.find((item) => item.id === product.id);
+  
     if (existingProduct) {
+      // ✅ Just increase quantity, do not update cart count
       existingProduct.quantity += 1;
     } else {
-      product.quantity = 1;
-      this.cartItems.push(product);
+      // ✅ Add new product, increase cart count
+      this.cartItems.push({ ...product, quantity: 1 });
+      this.cartCountSubject.next(this.cartCountSubject.value + 1); // ✅ Only increment for new product
     }
-
-    this.updateCart();
+  
+    this.updateCart(); // ✅ Update cart data
   }
-
-  // ✅ Get cart items
+  // ✅ Get updated cart items
   getCartItems(): any[] {
-    return this.cartItems;
+    return [...this.cartItems];
   }
 
   // ✅ Increase quantity
-  increaseQuantity(item: any) {
-    item.quantity += 1;
-    this.updateCart();
+  increaseQuantity(product: any) {
+    this.cartItems = this.cartItems.map(item =>
+      item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+    );
+    this.updateCart(); // ✅ This exists in AuthService
   }
 
-  // ✅ Decrease quantity
-  decreaseQuantity(item: any) {
-    if (item.quantity > 1) {
-      item.quantity -= 1;
-      this.updateCart();
-    }
+  // ✅ Decrease quantity (Remove if quantity reaches 0)
+  decreaseQuantity(product: any) {
+    this.cartItems = this.cartItems
+      .map(item =>
+        item.id === product.id ? { ...item, quantity: item.quantity - 1 } : item
+      )
+      .filter(item => item.quantity > 0);
+    this.updateCart();
   }
 
   // ✅ Remove product from cart
   removeProduct(index: number) {
-    this.cartItems.splice(index, 1);
+    this.cartItems = this.cartItems.filter((_, i) => i !== index);
     this.updateCart();
   }
 
-  // ✅ Update cart in localStorage and BehaviorSubject
+  // ✅ Update cart in localStorage and notify subscribers
   private updateCart() {
     localStorage.setItem('cartItems', JSON.stringify(this.cartItems));
     const totalItems = this.cartItems.reduce((total, item) => total + item.quantity, 0);
-    this.cartCount.next(totalItems);
+    this.cartSubject.next([...this.cartItems]);
+    this.cartCountSubject.next(totalItems);
   }
 
   // ✅ Clear cart
   clearCart() {
     this.cartItems = [];
     localStorage.removeItem('cartItems');
-    this.cartCount.next(0);
+    this.cartSubject.next([]);
+    this.cartCountSubject.next(0);
   }
 
   // ✅ User Authentication Logic
-  private userNameSubject = new BehaviorSubject<string | null>(localStorage.getItem('userName'));
-  userName$ = this.userNameSubject.asObservable();
-
   login(username: string) {
     localStorage.setItem('userName', username);
     this.userNameSubject.next(username);
@@ -88,4 +98,6 @@ export class AuthService {
     this.clearCart();
     sessionStorage.clear();
   }
+
+
 }

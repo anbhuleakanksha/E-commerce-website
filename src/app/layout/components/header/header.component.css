@@ -159,7 +159,7 @@ span {
     background: white;
     border: 1px solid #ccc;
     padding: 10px;
-    width: 250px;
+    width: 300px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
   }
@@ -247,7 +247,7 @@ span {
     font-weight: bold;
     min-width: 30px;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: #3fb033;
     padding: 5px 10px;
     border-radius: 5px;
   }
@@ -267,3 +267,16 @@ span {
     color: darkred;
     transform: scale(1.2);
   }
+  .total-quantity {
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff5722; /* Orange Background */
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  

@@ -110,6 +110,9 @@
     border-radius: 5px;
     cursor: pointer;
 }
+.image-container {
+  position: relative;
+}
 
 .card img {
     max-width: 100%;
@@ -150,4 +153,21 @@
 
 .add-to-cart-btn:active {
   transform: scale(0.95);
+}
+/* 🔹 Increment & Decrement Button Styling */
+.update-cart-btn {
+  background: #ffc107; /* Yellow color */
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background 0.3s ease;
+}
+
+.update-cart-btn:hover {
+  background: #ff9800; /* Darker yellow on hover */
 }

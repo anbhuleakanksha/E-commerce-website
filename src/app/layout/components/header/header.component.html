@@ -48,9 +48,12 @@
   <!-- SEARCH SECTION -->
   <div class="search-container">
     <i class="bi bi-search search-icon"></i>
-    <input type="text" class="search-input" placeholder="Search anything...">
-    <button class="btn btn-search">Search</button>
+    <input type="text" class="search-input" [(ngModel)]="searchQuery" placeholder="Search anything..." (input)="onSearch()">
+    <button class="btn btn-search" (click)="onSearch()">Search</button>
   </div>
+  
+  
+  
 
   <!-- User Section -->
   <div class="user-section">
@@ -64,7 +67,8 @@
 
     <!-- Cart Icon (Click to Show Cart Popup) -->
     <h1><i class="bi bi-cart" (click)="toggleCart()"></i>
-    <span class="cart-count">{{ cartItems.length }}</span></h1>
+    <span class="cart-count">{{ cartCount }}</span></h1>
+
 
     <!-- Logout Icon -->
     <h1><i (click)="logout()" class="bi bi-box-arrow-right" style="cursor: pointer;"></i></h1>
@@ -76,18 +80,24 @@
     <h3>Cart Items</h3>
 
     <div class="cart-item" *ngFor="let item of cartItems; let i = index">
-      <img [src]="item.img" class="cart-img">
+      <img [src]="item.img" alt="{{ item.name }}" class="cart-img">
       
       <div class="cart-details">
         <p class="cart-name">{{ item.name }}</p>
-        <p class="cart-price">₹{{ item.price }}</p>
+        <p class="cart-price">₹{{ item.price * item.quantity }}</p> 
     
         <!-- Quantity Controls -->
         <div class="quantity-control">
           <button (click)="decreaseQuantity(item)">-</button>
-          <span>{{ item.quantity }}</span>
-          <button (click)="increaseQuantity(item)">+</button>
-        </div>
+  <!-- <span>{{ item.quantity }}</span> -->
+  <button (click)="increaseQuantity(item)">+</button>
+
+  <!-- ✅ Display Total Quantity Here -->
+  <div class="total-quantity">
+    Total Quantity: {{ totalQuantity }}
+  </div>
+</div>
+
     
         <!-- ✅ Ensure Each Product Has Its Own Remove Button -->
         <button class="remove-btn" (click)="removeProduct(i)">Remove</button>
@@ -99,7 +109,7 @@
 
 
     <hr>
-    <p class="cart-total"><strong>Total Price: ₹{{ getTotalPrice() }}</strong></p>
+    <p>Total Price: ₹{{ getTotalPrice() }}</p>
 
     <!-- Order Now Button -->
     <button class="order-btn" (click)="placeOrder()">Order Now</button>

@@ -1,3 +1,4 @@
+<app-header (searchEvent)="onSearch($event)"></app-header>
 <div class="card-container">
     <!-- Image Section with Buttons Overlay -->
     <div class="image-container">
@@ -12,22 +13,34 @@
   </div>
   <div class="container-fluid">
     <div class="card-container2">
+        
     
-        <div class="card mx-auto pt-4" *ngFor="let product of products">
+        <div class="card mx-auto pt-4"  *ngFor="let product of filteredProducts">
             <div class="image-container">
-              <div class="sale-btn">SALE</div>
+                <div class="sale-btn" *ngIf="product.sale">SALE</div> 
               <img [src]="product.img" alt="{{ product.name }}">
             </div>
             <div class="card-body text-center">
               <h5 class="card-title">{{ product.name }}</h5>
-              <p class="card-text">${{ product.price }}</p>
-              <div class="card-footer">
-                <button class="add-to-cart-btn" (click)="addToCart(product)">
-                  🛒 Add to Cart
-                </button>
+              <p class="card-text">₹{{ product.price }}</p>
+          
+              <div *ngIf="cartMap[product.id]; else addCartBtn">
+                <p>🛒 In Cart: {{ cartMap[product.id].quantity }}</p>
+                <button class="update-cart-btn" (click)="increaseQuantity(product)">➕</button>
+                <button class="update-cart-btn" (click)="decreaseQuantity(product)">➖</button>
               </div>
+          
+              <ng-template #addCartBtn>
+                <div class="card-footer">
+                  <button class="add-to-cart-btn" (click)="addToCart(product)">
+                    🛒 Add to Cart
+                  </button>
+                </div>
+              </ng-template>
+          
             </div>
           </div>
+          
     
 
        
