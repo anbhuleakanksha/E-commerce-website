@@ -25,6 +25,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router, private authService: AuthService) {}
 
+  @Output() searchEvent = new EventEmitter<string>(); // ✅ Search event emitter
+
   ngOnInit() {
     // ✅ Subscribe to username updates (Real-time tracking)
     this.subscriptions.add(
@@ -62,8 +64,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   // ✅ Get Total Price of Cart
+  // getTotalPrice(): number {
+  //   return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  // }
   getTotalPrice(): number {
-    return this.cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+    return this.cartItems.reduce((total, item) => {
+      return total + this.getFinalPrice(item) * item.quantity;
+    }, 0);
+  }
+  getFinalPrice(product: any): number {
+    let discountedPrice = product.price * (1 - product.discount / 100); // Apply Discount
+    let finalPrice = discountedPrice * (1 + product.gst / 100); // Apply GST
+    return Math.round(finalPrice); // Round off
+  }
+  getTotalQuantity(): number {
+    return this.cartItems.reduce((total, item) => total + item.quantity, 0);
   }
 
   // ✅ Increase Quantity
@@ -100,7 +115,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
       this.router.navigate(['/order']);
     }
   }
-  @Output() searchEvent = new EventEmitter<string>(); // ✅ EventEmitter to send search query
+ 
 
   // ✅ Emit search query when input changes
   onSearch() {

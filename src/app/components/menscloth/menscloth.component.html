@@ -1,9 +1,46 @@
-<p>ladycloth works!</p>
+<app-header (searchEvent)="onSearch($event)"></app-header>
 
 <div class="main-card">
     <img  src="https://m.media-amazon.com/images/G/31/img2020/fashion/WA_2020/Gateway/apparelmin50/EOSS-Min50._CB410624090_.jpg">
 </div>
 <div class="container-fluid">
+    <div class="card-container2">
+        
+    
+        <div class="card mx-auto pt-4"  *ngFor="let product of filteredProducts">
+            <div class="image-container">
+                <div class="sale-btn" *ngIf="product.sale">SALE</div> 
+              <img [src]="product.img" alt="{{ product.name }}">
+            </div>
+            <p class="discount-label" *ngIf="product.discount > 0">
+                🔥 {{ product.discount }}% OFF!
+              </p>
+            <div class="card-body text-center">
+              <h5 class="card-title">{{ product.name }}</h5>
+              <p class="card-text">
+                <del *ngIf="product.discount">₹{{ product.price }}</del> 
+                ₹{{ getFinalPrice(product) }}
+              </p>
+              
+          
+              <div *ngIf="cartMap[product.id]; else addCartBtn">
+                <p>🛒 In Cart: {{ cartMap[product.id].quantity }}</p>
+                <button class="update-cart-btn" (click)="increaseQuantity(product)">➕</button>
+                <button class="update-cart-btn" (click)="decreaseQuantity(product)">➖</button>
+              </div>
+          
+              <ng-template #addCartBtn>
+                <div class="card-footer">
+                  <button class="add-to-cart-btn" (click)="addToCart(product)">
+                    🛒 Add to Cart
+                  </button>
+                </div>
+              </ng-template>
+          
+            </div>
+          </div>
+          
+<!-- <div class="container-fluid">
 
     <div class="card-container2">
     
@@ -268,6 +305,6 @@
                     </button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>

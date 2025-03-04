@@ -29,23 +29,7 @@
     right: 10px;
     bottom: 10px;
 }
-h1 {
-    text-align: center;
-    font-size: 35px; /* Bigger text */
-    font-weight: bold;
-    text-transform: uppercase;
-    background: linear-gradient(45deg, #090909, #0a0a0a, #0e0e0e); /* Gradient color */
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 3px 3px 10px rgba(255, 0, 0, 0.2);
-    animation: glow 1.5s infinite alternate;
-}
-
-@keyframes glow {
-    0% { text-shadow: 3px 3px 10px rgba(19, 18, 18, 0.5); }
-    100% { text-shadow: 5px 5px 20px rgba(225, 116, 106, 0.8); }
-}
-.card-container {
+.card-container2 {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -80,6 +64,10 @@ h1 {
     font-weight: bold;
     padding: 3px 8px;
     border-radius: 5px;
+    cursor: pointer;
+}
+.image-container {
+  position: relative;
 }
 
 .card img {
@@ -89,36 +77,66 @@ h1 {
 }
 .card-footer {
  
-    position: absolute;
-    bottom: 4px; /* Fix the button 10px from the bottom */
-     width: 88%; 
-    text-align: center;
-    padding: 0;
-  }
+  position: absolute;
+  bottom: 4px; /* Fix the button 10px from the bottom */
+   width: 88%; 
+  text-align: center;
+  padding: 0;
+}
+
+.add-to-cart-btn {
+  background: linear-gradient(45deg, #ff6600, #ff3300); /* Attractive gradient */
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.add-to-cart-btn:hover {
+  background: linear-gradient(45deg, #e65c00, #cc2900);
+  transform: scale(1.05);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
   
-  .add-to-cart-btn {
-    background: linear-gradient(45deg, #ff6600, #ff3300); /* Attractive gradient */
-    color: white;
-    border: none;
-    padding: 8px 15px;
-    font-size: 12px;
-    font-weight: bold;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-  }
-  
-  .add-to-cart-btn:hover {
-    background: linear-gradient(45deg, #e65c00, #cc2900);
-    transform: scale(1.05);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
-    
-  }
-  
-  .add-to-cart-btn:active {
-    transform: scale(0.95);
-  }
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.95);
+}
+/* 🔹 Increment & Decrement Button Styling */
+.update-cart-btn {
+  background: #ffc107; /* Yellow color */
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 5px;
+  transition: background 0.3s ease;
+}
+
+.update-cart-btn:hover {
+  background: #ff9800; /* Darker yellow on hover */
+}
+.discount-label {
+  color: red;
+  font-weight: bold;
+  /* background: yellow; */
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.card-text del {
+  color: gray;
+  margin-right: 5px;
+}

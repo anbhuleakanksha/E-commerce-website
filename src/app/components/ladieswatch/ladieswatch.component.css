@@ -171,3 +171,16 @@
 .update-cart-btn:hover {
   background: #ff9800; /* Darker yellow on hover */
 }
+.discount-label {
+  color: red;
+  font-weight: bold;
+  /* background: yellow; */
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.card-text del {
+  color: gray;
+  margin-right: 5px;
+}

@@ -125,3 +125,16 @@
 .add-to-cart-btn:active {
   transform: scale(0.95);
 }
+.discount-label {
+  color: red;
+  font-weight: bold;
+  /* background: yellow; */
+  padding: 4px 8px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.card-text del {
+  color: gray;
+  margin-right: 5px;
+}

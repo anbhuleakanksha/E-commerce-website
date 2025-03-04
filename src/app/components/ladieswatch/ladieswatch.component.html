@@ -18,11 +18,18 @@
         <div class="card mx-auto pt-4"  *ngFor="let product of filteredProducts">
             <div class="image-container">
                 <div class="sale-btn" *ngIf="product.sale">SALE</div> 
-              <img [src]="product.img" alt="{{ product.name }}">
+                <img [src]="product.img" alt="{{ product.name }}">
             </div>
+            <p class="discount-label" *ngIf="product.discount > 0">
+                🔥 {{ product.discount }}% OFF!
+              </p>
             <div class="card-body text-center">
               <h5 class="card-title">{{ product.name }}</h5>
-              <p class="card-text">₹{{ product.price }}</p>
+              <p class="card-text">
+                <del *ngIf="product.discount">₹{{ product.price }}</del> 
+                ₹{{ getFinalPrice(product) }}
+              </p>
+              
           
               <div *ngIf="cartMap[product.id]; else addCartBtn">
                 <p>🛒 In Cart: {{ cartMap[product.id].quantity }}</p>

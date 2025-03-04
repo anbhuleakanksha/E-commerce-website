@@ -19,20 +19,23 @@ export const routes: Routes = [
     { path: 'register', component: RegisterComponent }, // ✅ Public route
 
     // ✅ Protected routes (Only accessible if logged in)
-    { path: 'home', component: HomeComponent, canActivate: [authGuard] },
-    { path: 'header', component: HeaderComponent, canActivate: [authGuard] },
-    { path: 'footer', component: FooterComponent, canActivate: [authGuard] },
-    { path: 'electrical', component: ElectricalComponent, canActivate: [authGuard] },
-    { path: 'menswatch', component: MenswatchComponent, canActivate: [authGuard] },
-    { path: 'ladieswatch', component: LadieswatchComponent, canActivate: [authGuard] },
-    { path: 'ladiesshoes', component: LadiesshoesComponent, canActivate: [authGuard] },
-    { path: 'ladycloth', component: LadyclothComponent, canActivate: [authGuard] },
-    { path: 'menscloth', component: MensclothComponent, canActivate: [authGuard] },
-    { path: 'cart', component: CardComponent, canActivate: [authGuard] },
-    { path: 'order', component: OrderComponent,canActivate: [authGuard] },
+    // { path: 'search/:query', component: SearchComponent },
+    // { path: 'search-results', component: SearchResultsComponent },
+    { path: 'home', component: HomeComponent },
+    { path: 'header', component: HeaderComponent },
+    { path: 'footer', component: FooterComponent },
+    { path: 'electrical', component: ElectricalComponent },
+    { path: 'menswatch', component: MenswatchComponent },
+    { path: 'ladieswatch', component: LadieswatchComponent },
+    { path: 'ladiesshoes', component: LadiesshoesComponent },
+    { path: 'ladycloth', component: LadyclothComponent },
+    { path: 'menscloth', component: MensclothComponent },
+    { path: 'cart', component: CardComponent},
+    { path: 'order', component: OrderComponent },
+    // { path: '**', redirectTo: '' }
 
     // ✅ Redirect base URL to login
-    { path: '', redirectTo: 'login', pathMatch: 'full' },
+    // { path: '', redirectTo: 'login', pathMatch: 'full' },
 
     
 ];

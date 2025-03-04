@@ -48,9 +48,20 @@
   <!-- SEARCH SECTION -->
   <div class="search-container">
     <i class="bi bi-search search-icon"></i>
-    <input type="text" class="search-input" [(ngModel)]="searchQuery" placeholder="Search anything..." (input)="onSearch()">
-    <button class="btn btn-search" (click)="onSearch()">Search</button>
+    <input 
+      type="text" 
+      class="search-input" 
+      [(ngModel)]="searchQuery" 
+      placeholder="Search for products..." 
+      (keyup.enter)="onSearch()" 
+      (input)="onSearch()" 
+      aria-label="Search products"
+    />
+    <button class="btn btn-search" (click)="onSearch()">
+       Search
+    </button>
   </div>
+  
   
   
   
@@ -84,7 +95,8 @@
       
       <div class="cart-details">
         <p class="cart-name">{{ item.name }}</p>
-        <p class="cart-price">₹{{ item.price * item.quantity }}</p> 
+        <p class="cart-price">₹{{ getFinalPrice(item) * item.quantity }}</p>
+
     
         <!-- Quantity Controls -->
         <div class="quantity-control">
@@ -93,8 +105,9 @@
   <button (click)="increaseQuantity(item)">+</button>
 
   <!-- ✅ Display Total Quantity Here -->
-  <div class="total-quantity">
-    Total Quantity: {{ totalQuantity }}
+  <div class="cart-summary">
+    <p><strong>Total Quantity:</strong> {{ getTotalQuantity() }}</p>
+    <p><strong>Total Price:</strong> ₹{{ getTotalPrice() }}</p>
   </div>
 </div>
 
