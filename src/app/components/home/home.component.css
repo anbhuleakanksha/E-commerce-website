@@ -226,3 +226,54 @@ textarea {
 .send-button {
   text-align: center;
 }
+.containercard {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-left: 98px;
+}
+.heading2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.containercard {
+  display: flex;
+  justify-content: center;
+  gap: 98px;
+  flex-wrap: wrap;
+}
+.cardservice {
+  /* background: linear-gradient(135deg, #ff7e5f, #feb47b); */
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  width: 280px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  color: black;
+}
+.cardservice:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.cardservice img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10%;
+  margin-bottom: 15px;
+  border: 4px solid white;
+}
+h2 {
+  margin: 10px 0;
+  font-size: 22px;
+}
+p {
+  font-size: 14px;
+}
