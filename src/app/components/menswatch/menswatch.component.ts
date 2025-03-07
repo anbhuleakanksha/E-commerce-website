@@ -30,7 +30,7 @@ export class MenswatchComponent{
   
   filteredProducts = [...this.products]; 
 
-  cartMap: { [key: number]: any } = {}; // 🔥 Map for quick lookup
+  cartMap: { [key: number]: any } = {};
 
   constructor(private authService: AuthService) {}
 
@@ -57,7 +57,7 @@ export class MenswatchComponent{
   // }
 
   onSearch(query: string) {
-    console.log("Search query:", query); // ✅ Debugging
+    console.log("Search query:", query); 
     if (!query) {
       this.filteredProducts = [...this.products];
     } else {
@@ -80,8 +80,8 @@ export class MenswatchComponent{
   }
 
   getFinalPrice(product: any): number {
-    let discountedPrice = product.price * (1 - product.discount / 100); // Apply Discount
-    let finalPrice = discountedPrice * (1 + product.gst / 100); // Apply GST
-    return Math.round(finalPrice); // Round off
+    let discountedPrice = product.price * (1 - product.discount / 100); 
+    let finalPrice = discountedPrice * (1 + product.gst / 100); 
+    return Math.round(finalPrice); 
   }
 }

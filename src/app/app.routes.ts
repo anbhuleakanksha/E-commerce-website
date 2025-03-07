@@ -16,7 +16,7 @@ import { OrderComponent } from './components/order/order.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginComponent }, // ✅ Public route
-    { path: 'register', component: RegisterComponent }, // ✅ Public route
+    { path: '', component: RegisterComponent }, // ✅ Public route
 
     // ✅ Protected routes (Only accessible if logged in)
     // { path: 'search/:query', component: SearchComponent },
