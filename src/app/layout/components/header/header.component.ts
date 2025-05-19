@@ -9,9 +9,9 @@ import { EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterOutlet, RouterModule],
+  imports: [CommonModule, ReactiveFormsModule, FormsModule, RouterModule],
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css'] // ✅ Fixed styleUrls
+  styleUrls: ['./header.component.css'] 
 })
 export class HeaderComponent implements OnInit, OnDestroy {
   userName: string | null = '';
@@ -102,14 +102,14 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.authService.removeProduct(index);
   }
 
-  placeOrder() {
-    if (this.cartItems.length === 0) {
-      alert('Your cart is empty! Add some products first.');
-    } else {
-      this.router.navigate(['/order']);
-    }
+  placeOrder(){ this.cartItems.forEach(item => {
+    item.finalPrice = this.getFinalPrice(item) * item.quantity;  // ✅ Ensure correct final price is stored
+  });
+  
+  this.authService.setCartItems(this.cartItems);  // ✅ Save latest cart data
+  this.router.navigate(['/order']); // ✅ Navigate to Order Page
   }
- 
+
 
  
   onSearch() {

@@ -91,7 +91,7 @@
     <h3>Cart Items</h3>
 
     <div class="cart-item" *ngFor="let item of cartItems; let i = index">
-      <img [src]="item.img" alt="{{ item.name }}" class="cart-img">
+      <img [src]="item.imageUrl" alt="{{ item.name }}" class="cart-img">
       
       <div class="cart-details">
         <p class="cart-name">{{ item.name }}</p>
@@ -101,23 +101,24 @@
         <!-- Quantity Controls -->
         <div class="quantity-control">
           <button (click)="decreaseQuantity(item)">-</button>
-  <!-- <span>{{ item.quantity }}</span> -->
+
   <button (click)="increaseQuantity(item)">+</button>
 
-  <!-- ✅ Display Total Quantity Here -->
+ 
   <div class="cart-summary">
-    <p><strong>Total Quantity:</strong> {{ getTotalQuantity() }}</p>
-    <p><strong>Total Price:</strong> ₹{{ getTotalPrice() }}</p>
+    <p class="order-quantity">Quantity: {{ item.quantity }}</p>
+
   </div>
 </div>
 
     
-        <!-- ✅ Ensure Each Product Has Its Own Remove Button -->
+       
         <button class="remove-btn" (click)="removeProduct(i)">Remove</button>
       </div>
     </div>
 
     <hr>
+    <p><strong>Total Quantity:</strong> {{ getTotalQuantity() }}</p>
     <p>Total Price: ₹{{ getTotalPrice() }}</p>
 
     <!-- Order Now Button -->

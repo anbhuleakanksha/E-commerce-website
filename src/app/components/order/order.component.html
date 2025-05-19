@@ -1,31 +1,60 @@
 <div class="order-container">
-  <h2>Order Summary</h2>
+  <h2>Order Summary & Billing</h2>
 
-  <div *ngFor="let item of cartItems" class="order-item">
-    <img [src]="item.img" class="order-img">
-    <div class="order-details">
-      <p class="order-name">{{ item.name }}</p>
-      <p class="order-price">₹{{ item.price }}</p>
+  <form class="order-full-form" (ngSubmit)="confirmOrder()" #orderForm="ngForm">
+
+    <!-- Product Details Table -->
+    <div class="product-table">
+      <div class="product-row header">
+        <div>Image</div>
+        <div>Product Name</div>
+        <div>Quantity</div>
+        <div>GST</div>
+        <div>Discount</div>
+        <div>Price</div>
+        <div>Action</div>
+      </div>
+
+      <div *ngFor="let item of cartItems" class="product-row">
+        <div><img [src]="item.imageUrl" #imageUrl name="imageUrl" class="product-img" alt="Product Image"></div>
+        <div><input type="text" #name name="name" [value]="item.name" readonly></div>
+        <div><input type="number"  #quantity  name="quantity"   [value]="item.quantity" readonly></div>
+        <div><input type="text" #gst name="gst" [value]="item.gst + '%'" readonly></div>
+        <div><input type="text" #discount name="discount" [value]="item.discount + '%'" readonly></div>
+        <div><input type="text" #price name="price" [value]="'₹' + getTotalPrice()" readonly> </div>
+        <div><button type="button" class="remove-btn" (click)="removeFromCart(item)">Remove</button></div>
+      </div>
     </div>
-    <button class="remove-btn" (click)="removeFromCart(item)">Remove</button>
-  </div>
 
-  <p class="order-total">Total Price: ₹{{ getTotalPrice() }}</p>
+    <div class="total-section">
+      <strong>Total Price: ₹{{ getTotalPrice() }}</strong>
+    </div>
 
-  <h3>Billing Details</h3>
-  <form class="order-form" (ngSubmit)="confirmOrder()">
-    <label for="name">Name</label>
-    <input type="text" id="name" [(ngModel)]="order.name" name="name" required>
+    <!-- Billing Details -->
+    <div class="billing-grid">
+      <div class="billing-item">
+        <label>Name</label>
+        <input type="text" [(ngModel)]="order.name" #orname name="orname" required>
+      </div>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" [(ngModel)]="order.email" name="email" required>
+      <div class="billing-item">
+        <label>Email</label>
+        <input type="email" name="email" required>
+      </div>
 
-    <label for="address">Address</label>
-    <textarea id="address" [(ngModel)]="order.address" name="address" required></textarea>
+      <div class="billing-item full-width">
+        <label>Address</label>
+        <textarea [(ngModel)]="order.address" #address  name="address" required></textarea>
+      </div>
 
-    <label for="total">Total Price (₹)</label>
-    <input type="text" id="total" [value]="'₹' + getTotalPrice()" name="total" readonly>
+      <div class="billing-item full-width">
+        <label>Total Price (₹)</label>
+        <input type="text" [value]="'₹' + getTotalPrice()" readonly>
+      </div>
 
-    <button type="submit" class="confirm-btn">Confirm Order</button>
+      <div class="billing-item full-width">
+        <button type="submit" class="confirm-btn">Submit Order</button>
+      </div>
+    </div>
   </form>
 </div>

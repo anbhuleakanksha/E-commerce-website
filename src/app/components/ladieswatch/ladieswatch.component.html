@@ -1,16 +1,21 @@
-<app-header (searchEvent)="onSearch($event)"></app-header>
+
+
+
+<!-- <app-header (searchEvent)="onSearch($event)"></app-header> -->
 <div class="card-container">
-    <!-- Image Section with Buttons Overlay -->
+  
     <div class="image-container">
       <img src="https://www.krishnawatch.com/cdn/shop/files/mobile.jpg?v=1737979636&width=1500" alt="Product Image" class="image" />
       
-      <!-- Buttons on Image -->
       <div class="overlay-buttons">
         <button class="btn btn-blue" routerLink="/menswatch">Mens Watch</button>
         <button class="btn btn-green" routerLink="/ladieswatch">Ladies Watch</button>
       </div>
     </div>
   </div>
+
+
+  
   <div class="container-fluid">
     <div class="card-container2">
         
@@ -18,7 +23,7 @@
         <div class="card mx-auto pt-4"  *ngFor="let product of filteredProducts">
             <div class="image-container">
                 <div class="sale-btn" *ngIf="product.sale">SALE</div> 
-                <img [src]="product.img" alt="{{ product.name }}">
+                <img [src]="product.imageUrl" alt="{{ product.name }}">
             </div>
             <p class="discount-label" *ngIf="product.discount > 0">
                 🔥 {{ product.discount }}% OFF!

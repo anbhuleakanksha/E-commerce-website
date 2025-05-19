@@ -1,0 +1,44 @@
+
+
+  <div class="dashboard-layout">
+    <app-admin-dashbord></app-admin-dashbord>
+
+    <div>
+    <main style="width: 70%;" class="dashboard">
+      <h1>Dashbord</h1>
+       <div class="dashboard-cards">
+           <div class="card">
+               <h3>Total Revenue</h3>
+               <p>$82,650</p>
+           </div>
+           <div class="card">
+               <h3>Total Orders</h3>
+               <p>1645</p>
+           </div>
+           <div class="card">
+               <h3>Total Customers</h3>
+               <p>1462</p>
+           </div>
+           <div class="card">
+               <h3>Pending Deliveries</h3>
+               <p>117</p>
+           </div>
+       </div>
+   </main> 
+  <form>
+
+    <h2>Add New Category</h2>
+
+    <!-- Product Name -->
+    <label for="name">Product Name:</label>
+    <input type="text" #name name="name" required>
+
+   
+
+    <!-- Submit Button -->
+    <button type="submit">Add Product</button>
+    <button class="btn btn-warning">Reset</button>&nbsp;&nbsp;
+    <button class="btn btn-success">Update</button>
+  </form>
+  </div>
+</div>

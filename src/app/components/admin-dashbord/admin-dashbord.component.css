@@ -1,0 +1,136 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Layout */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #2d8f7e;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: width 0.3s;
+}
+
+.sidebar.collapsed {
+    width: 80px;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    transition: opacity 0.3s;
+}
+
+.sidebar.collapsed h2 {
+    opacity: 0;
+}
+
+/* Sidebar Menu */
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.sidebar ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.sidebar.collapsed ul li a span {
+    display: none;
+}
+
+/* Hamburger Menu */
+.menu-toggle {
+    font-size: 24px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Admin Page Content */
+.admin-page-content {
+    flex-grow: 1;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Dashboard */
+.dashboard {
+    width: 500%;
+}
+
+.dashboard h1 {
+    margin-bottom: 20px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: nowrap; /* This ensures all cards stay in one line */
+    overflow-x: auto;   /* Scroll if needed on smaller screens */
+    padding-bottom: 10px;
+}
+
+.card {
+    background: #2d8f7e;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    flex: 1 0 22%; /* Makes each card responsive in a row */
+    text-align: center;
+    min-width: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.has-submenu {
+    position: relative;
+  }
+  
+  .has-submenu .submenu {
+    list-style: none;
+    padding-left: 20px;
+    margin-top: 5px;
+  }
+  
+  .has-submenu .submenu li a {
+    font-size: 16px;
+    padding: 5px 0;
+    display: block;
+    color:red;
+    text-decoration: none;
+  }
+  
+  .has-submenu .submenu li a:hover {
+    text-decoration: underline;
+  }
+  

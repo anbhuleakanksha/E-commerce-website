@@ -1,0 +1,49 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+
+<div class="container">
+  
+    <div class="container">
+      
+        <nav class="sidebar" [class.collapsed]="isCollapsed">
+           
+            <div class="menu-toggle" (click)="toggleSidebar()">☰</div>
+            <h2 *ngIf="!isCollapsed">Admin Panel</h2>
+    
+            <ul>
+                <li>
+                    <a routerLink="/admin-dashbord">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span *ngIf="!isCollapsed">Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="bi bi-folder"></i> 
+                        <span *ngIf="!isCollapsed">Products</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span *ngIf="!isCollapsed">Orders</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-users"></i>
+                        <span *ngIf="!isCollapsed">Customers</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i> 
+                        <span *ngIf="!isCollapsed">Settings</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        </div>

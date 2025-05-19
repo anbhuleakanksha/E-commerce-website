@@ -1,0 +1,61 @@
+<div class="dashboard-layout">
+    <!-- Admin Sidebar -->
+    <app-admin-dashbord></app-admin-dashbord>
+
+    <div>
+        <main style="width: 70%;" class="dashboard">
+            <h1>Dashbord</h1>
+             <div class="dashboard-cards">
+                 <div class="card">
+                     <h3>Total Revenue</h3>
+                     <p>$82,650</p>
+                 </div>
+                 <div class="card">
+                     <h3>Total Orders</h3>
+                     <p>1645</p>
+                 </div>
+                 <div class="card">
+                     <h3>Total Customers</h3>
+                     <p>1462</p>
+                 </div>
+                 <div class="card">
+                     <h3>Pending Deliveries</h3>
+                     <p>117</p>
+                 </div>
+             </div>
+         </main> 
+
+<h1 style="margin-top: 5%;">Developers Details</h1>
+<table class="table table-bordered table-hover text-center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>GST</th>
+            <th>Discount</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of devArray | paginate:{itemsPerPage:2,currentPage:p}">
+            <td>{{d.id}}</td>
+            <td>{{d.name}}</td>
+            <td>{{d.price}}</td>
+            <td>{{d.gst}}</td>
+            <td>{{d.discount}}</td>
+            <td>{{d.quantity}}</td>
+            <td><img [src]="d.imageUrl" alt="Product Image" width="100" height="100"></td>
+            <td>
+                <button (click)="delete(d.id)" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>&nbsp;&nbsp;
+                <button (click)="update(d.id)" class="btn btn-success"><i class="bi bi-pencil-square"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<pagination-controls style="float: right;" (pageChange)="p=$event"></pagination-controls>
+</div>
+</div>

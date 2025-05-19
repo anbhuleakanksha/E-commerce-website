@@ -12,7 +12,7 @@
         <div class="card mx-auto pt-4"  *ngFor="let product of filteredProducts">
             <div class="image-container">
                 <div class="sale-btn" *ngIf="product.sale">SALE</div> 
-                <img [src]="product.img" alt="{{ product.name }}">
+                <img [src]="product.imageUrl" alt="{{ product.name }}">
             </div>
             <p class="discount-label" *ngIf="product.discount > 0">
                 🔥 {{ product.discount }}% OFF!

@@ -13,29 +13,37 @@ import { LoginComponent } from './components/login/login.component';
 import { authGuard } from './guard/auth.guard';
 import { CardComponent } from './components/card/card.component';
 import { OrderComponent } from './components/order/order.component';
+import { ProductsComponent } from './admincomponents/products/products.component';
+import { GetAllproductComponent } from './admincomponents/get-allproduct/get-allproduct.component';
+import { SidenavComponent } from './admincomponents/sidenav/sidenav.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { AdminDashbordComponent } from './components/admin-dashbord/admin-dashbord.component';
+import { AdminLayoutComponent } from './components/admin-layout/admin-layout.component';
+import { OrderviewComponent } from './admincomponents/orderview/orderview.component';
+
 
 export const routes: Routes = [
-    { path: 'login', component: LoginComponent }, // ✅ Public route
-    { path: '', component: RegisterComponent }, // ✅ Public route
-
-    // ✅ Protected routes (Only accessible if logged in)
-    // { path: 'search/:query', component: SearchComponent },
-    // { path: 'search-results', component: SearchResultsComponent },
+    { path: 'login', component: LoginComponent }, 
+    { path: '', component: RegisterComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'header', component: HeaderComponent },
-    { path: 'footer', component: FooterComponent },
     { path: 'electrical', component: ElectricalComponent },
     { path: 'menswatch', component: MenswatchComponent },
     { path: 'ladieswatch', component: LadieswatchComponent },
     { path: 'ladiesshoes', component: LadiesshoesComponent },
     { path: 'ladycloth', component: LadyclothComponent },
     { path: 'menscloth', component: MensclothComponent },
-    { path: 'cart', component: CardComponent},
+    { path: 'cart', component: CardComponent },
     { path: 'order', component: OrderComponent },
-    // { path: '**', redirectTo: '' }
+    {path:'payment',component:PaymentComponent},
 
-    // ✅ Redirect base URL to login
-    // { path: '', redirectTo: 'login', pathMatch: 'full' },
+      
+    { path: 'products', component: ProductsComponent },
+    { path: 'get-allproduct', component: GetAllproductComponent },
+    { path: 'sidenav', component: SidenavComponent },
+    {path:'add-category',component:AddCategoryComponent},
+    {path:'admin-dashbord',component:AdminDashbordComponent},
+   {path:'orderview',component:OrderviewComponent},
+]
 
-    
-];
+

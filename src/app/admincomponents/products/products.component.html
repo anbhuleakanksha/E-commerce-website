@@ -1,0 +1,68 @@
+
+<div class="dashboard-layout">
+<app-admin-dashbord></app-admin-dashbord>,
+
+<!-- Dashboard Content -->
+<div>
+     <main style="width: 70%;" class="dashboard">
+       <h1>Dashbord</h1>
+        <div class="dashboard-cards">
+            <div class="card">
+                <h3>Total Revenue</h3>
+                <p>$82,650</p>
+            </div>
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p>1645</p>
+            </div>
+            <div class="card">
+                <h3>Total Customers</h3>
+                <p>1462</p>
+            </div>
+            <div class="card">
+                <h3>Pending Deliveries</h3>
+                <p>117</p>
+            </div>
+        </div>
+    </main> 
+
+
+
+    <form #productdata="ngForm" (ngSubmit)="product(productdata, fileInput)">
+      <h2 style="margin-left: 35%;">Add New Product</h2>
+      <table class="product-form-table">
+        <tr>
+          <td><label for="name">Product Name:</label></td>
+          <td><label for="price">Price (₹):</label></td>
+          <td><label for="gst">GST (%):</label></td>
+        </tr>
+        <tr>
+          <td><input type="text" #name name="name" ngModel required></td>
+          <td><input type="number" #price name="price" ngModel required></td>
+          <td><input type="number" #gst name="gst" ngModel required></td>
+        </tr>
+    
+        <tr>
+          <td><label for="discount">Discount (%):</label></td>
+          <td><label for="quantity">Quantity:</label></td>
+          <td><label for="fileInput">Image:</label></td>
+        </tr>
+        <tr>
+          <td><input type="number" #discount name="discount" ngModel required></td>
+          <td><input type="number" #quantity name="quantity" ngModel required></td>
+          <td><input type="file" #fileInput></td>
+        </tr>
+        <tr>
+          <td colspan="3" style="text-align: center;">
+            <div style="display: flex; justify-content: center; gap: 15px;">
+              <button type="submit">Add Product</button>
+              <button type="reset" class="btn btn-warning">Reset</button>
+              <button type="button" class="btn btn-success">Update</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </form>
+    
+</div>
+</div>

@@ -5,6 +5,8 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
+
+  
   private cartItems: any[] = [];
   private cartSubject = new BehaviorSubject<any[]>([]);
   cart$ = this.cartSubject.asObservable();
@@ -44,6 +46,7 @@ export class AuthService {
   
   getCartItems(): any[] {
     return [...this.cartItems];
+    return this.cartItems;
   }
 
 
@@ -97,6 +100,17 @@ export class AuthService {
     this.userNameSubject.next(null);
     this.clearCart();
     sessionStorage.clear();
+  }
+
+
+
+  // getCartItems(): any[] {
+  //   return this.cartItems;
+  // }
+
+  // ✅ Add This Method to Save Cart Items
+  setCartItems(items: any[]): void {
+    this.cartItems = items;
   }
 
 
